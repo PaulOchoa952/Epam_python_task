@@ -134,5 +134,5 @@ def get_the_word(value=""):
 # Initialize the instace of you class
 d = Dictionary()
 
-# Call the menu
-menu()
+if __name__ == "__main__":
+    menu()
