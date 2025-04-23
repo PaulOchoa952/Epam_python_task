@@ -1,4 +1,4 @@
-name: Python Checks with Ruff and Tests
+name: Python Checks with Ruff and Tests 2
 
 on:
   push:
