@@ -1,24 +1,24 @@
-name: Python Checks with Ruff and Tests 2
+name: Python Checks with Ruff and Tests
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger workflow when code is pushed to `main`
   pull_request:
     branches:
-      - main
+      - main  # Trigger workflow for pull requests to `main`
 
 jobs:
   lint-and-test:
     name: Lint and Run Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use Ubuntu virtual machine
 
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.14]  # Test against multiple Python versions
+        python-version: [3.8, 3.9, 3.10, 3.11]  # Valid Python versions
 
     steps:
-      # Step 1: Checkout the code
+      # Step 1: Check out the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -28,11 +28,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      # Step 3: Install dependencies and Ruff
+      # Step 3: Install dependencies (if `requirements.txt` exists)
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest ruff  # Install pytest for testing, Ruff for linting
+          python -m pip install --upgrade pip  # Upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       # Step 4: Run Ruff Linting
