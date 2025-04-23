@@ -55,6 +55,7 @@ class Dictionary:
                 print(f"{item} doesnt exist in the dictionary")
         total += total * tax
         print(f"The total is: {total}")
+        return round(total, 2)
 
 
 # menu method
