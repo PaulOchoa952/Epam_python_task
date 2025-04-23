@@ -57,32 +57,34 @@ class Dictionary:
         print(f"The total is: {total}")
 
 
-
 # menu method
 def menu():
     while True:
-        print("Select the task you want to try\n " \
-        "1. Add a new fruit \n " \
-        "2. Look up a fruit's description \n " \
-        "3. Add an item to the bought items list \n " \
-        "4. Get the word from the array \n " \
-        "5. Exit")
+        print(
+            "Select the task you want to try\n "
+            "1. Add a new fruit \n "
+            "2. Look up a fruit's description \n "
+            "3. Add an item to the bought items list \n "
+            "4. Get the word from the array \n "
+            "5. Exit"
+        )
 
-        choice=input("Enter the number of task you want to try: ").strip()
+        choice = input("Enter the number of task you want to try: ").strip()
 
         if choice == "1":
             add_fruit()
         elif choice == "2":
             lookup_fruit()
-        elif choice == "3" :
+        elif choice == "3":
             add_item()
-        elif choice== "4":
+        elif choice == "4":
             get_the_word()
-        elif choice== "5":
+        elif choice == "5":
             print("Exiting the program. GoodBye!")
             break
         else:
             print("Invalid choice.Please select valid option from the menu!")
+
 
 # add a new fruit with a while loop
 def add_fruit():
@@ -92,31 +94,32 @@ def add_fruit():
         if name.lower() == "stop":
             print("\n")
             break
-        description=input(f"Enter the description of {name}: ").strip()
-        d.newEntry(name,description)
-        print("added to the dictionary! \n") 
+        description = input(f"Enter the description of {name}: ").strip()
+        d.newEntry(name, description)
+        print("added to the dictionary! \n")
 
 
 # display specific fruit description
 def lookup_fruit():
     while True:
         print("\n Look for a specific fruit(type STOP to finish)")
-        search_name=input("Enter the search_name of the fruit:").strip()
+        search_name = input("Enter the search_name of the fruit:").strip()
         if search_name.lower() == "stop":
             print("\n")
             break
         d.look(search_name)
+
 
 # add the items to the array
 def add_item():
     while True:
         print("\n Add the items to the array(type STOP to finish)")
         item_bougth = input("Enter the item: ").strip()
-        if item_bougth.lower()== "stop":
+        if item_bougth.lower() == "stop":
             print("\n")
             break
         d.newItem(item_bougth)
-    taxes=float(input("Please enter the amount of taxes: "))
+    taxes = float(input("Please enter the amount of taxes: "))
     d.get_Total(taxes)
 
 
