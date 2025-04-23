@@ -1,5 +1,10 @@
+import sys
+import os
 import unittest
-from dictionary import Dictionary  # Replace `your_module` with the name of the file containing your class
+
+# Add the parent directory to the module search path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from dictionary import Dictionary  # Import your Dictionary class
 
 
 class TestDictionary(unittest.TestCase):
@@ -29,7 +34,9 @@ class TestDictionary(unittest.TestCase):
         self.d.newEntry("grapes", "Small round fruit often used in wine-making")
 
         # Look for an existing fruit
-        self.assertEqual(self.d.fruit.get("grapes"), "Small round fruit often used in wine-making")
+        self.assertEqual(
+            self.d.fruit.get("grapes"), "Small round fruit often used in wine-making"
+        )
         # Look up a non-existing fruit
         self.assertIsNone(self.d.fruit.get("pineapple"))
 
@@ -47,7 +54,9 @@ class TestDictionary(unittest.TestCase):
 
         # Calculate total cost with tax
         self.d.items_bought = ["socks", "shoes"]  # Re-set for a predictable result
-        self.assertEqual(self.d.get_Total(0.1), 71.5)  # Tax 10%, socks=5 + shoes=60 → total = 65 + 6.5 = 71.5
+        self.assertEqual(
+            self.d.get_Total(0.1), 71.5
+        )  # Tax 10%, socks=5 + shoes=60 → total = 65 + 6.5 = 71.5
 
     def test_get_the_word(self):
         """
