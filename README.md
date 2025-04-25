@@ -100,3 +100,24 @@ Navigate to the tests folder an run the test_main file
 2. **Calculating total costs with and without ignoring items not in the cost dictionary.** 
 3. **Assembling the word from an array of words.** 
 
+# Python Project with Makefile
+
+This project includes a `Makefile` to simplify common tasks such as installing dependencies, running tests, linting, and executing specific examples.
+
+## Available Makefile Commands
+
+Below is a list of available commands in the `Makefile`:
+
+### General Commands
+- **`make help`**: Display the list of available commands.
+- **`make install`**: Install all required dependencies from `requirements.txt`.
+- **`make lint`**: Run Ruff for code linting.
+- **`make test`**: Run Pytest for unit tests.
+- **`make clean`**: Clean up Python cache and temporary files.
+
+### Example-Specific Commands
+- **`make menu`**: Run the menu example, which allows you to interact with all the options (add words, look up words, calculate spending, etc.).
+- **`make dict`**: Run the dictionary example to add words and their descriptions.
+- **`make lookup`**: Run the dictionary example to look up words and their descriptions.
+- **`make spend`**: Run the spending/tax calculation example.
+- **`make array`**: Run the nth letter concatenation array example.
