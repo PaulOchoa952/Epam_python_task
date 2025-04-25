@@ -44,13 +44,13 @@ menu:
 	@echo "Running the menu example..."
 	$(PYTHON) -c "from main import menu; menu()"  
 
-#Run the fruit dictionary example
+#Run the dictionary example with add options
 dict:
 	@echo "Running the dictionary example..."
 	$(PYTHON) -c "from main import d,add_to_dictionary;add_to_dictionary()"
 
 lookup:
-#Run the fruit dictionary example with a lookup
+#Run the dictionary example with add lookup options
 	@echo "Running the dictionary example with a lookup..."
 	$(PYTHON) -c "from main import d, lookup_for_word;lookup_for_word()"
 
