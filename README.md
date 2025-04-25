@@ -63,8 +63,8 @@ The program is interactive, operating as a command-line menu-driven application.
    pip install -r requirements.txt
 ---
 ## How to Run
-
-Execute the main script:
+1. **Execute the dictionary file** 
+    Execute the main script:
     ```bash
     python dictionary.py
 
@@ -73,7 +73,7 @@ The program will then display an interactive menu providing options to perform t
 
 ## Usage
 
-### Menu Options
+### Menu Options(Choose an option)
 
 1. **Add a new Fruit**  
 Allows the user to add a fruit with a name and description to the dictionary.
