@@ -4,7 +4,7 @@ import unittest
 
 # Add the parent directory to the module search path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from dictionary import Dictionary  # Import your Dictionary class
+from main import Dictionary  # Import your Dictionary class
 
 
 class TestDictionary(unittest.TestCase):

@@ -63,19 +63,19 @@ def menu():
     while True:
         print(
             "Select the task you want to try\n "
-            "1. Add a new fruit \n "
-            "2. Look up a fruit's description \n "
+            "1. Add a new word \n "
+            "2. Look up a word's description \n "
             "3. Add an item to the bought items list \n "
-            "4. Get the word from the array \n "
+            "4. Get the concatenated word from the array \n "
             "5. Exit"
         )
 
         choice = input("Enter the number of task you want to try: ").strip()
 
         if choice == "1":
-            add_fruit()
+            add_to_dictionary()
         elif choice == "2":
-            lookup_fruit()
+            lookup_for_word()
         elif choice == "3":
             add_item()
         elif choice == "4":
@@ -87,31 +87,30 @@ def menu():
             print("Invalid choice.Please select valid option from the menu!")
 
 
-# add a new fruit with a while loop
-def add_fruit():
+# add a new word to the dictinary with a while loop
+def add_to_dictionary():
     while True:
-        print("\nEnter a fruit(type STOP to finish): ")
-        name = input("Enter the name of the fruit:").strip()
+        print("\nEnter a word(type STOP to finish): ")
+        name = input("Enter the name of the word:").strip()
         if name.lower() == "stop":
             print("\n")
             break
         description = input(f"Enter the description of {name}: ").strip()
         d.newEntry(name, description)
-        print("added to the dictionary! \n")
 
 
-# display specific fruit description
-def lookup_fruit():
+# display specific word description
+def lookup_for_word():
     while True:
-        print("\n Look for a specific fruit(type STOP to finish)")
-        search_name = input("Enter the search_name of the fruit:").strip()
+        print("\n Look for a specific word(type STOP to finish)")
+        search_name = input("Enter the search_name of the word:").strip()
         if search_name.lower() == "stop":
             print("\n")
             break
         d.look(search_name)
 
 
-# add the items to the array
+# add the items to the purcharse_array
 def add_item():
     while True:
         print("\n Add the items to the array(type STOP to finish)")
@@ -125,7 +124,7 @@ def add_item():
 
 
 def get_the_word(value=""):
-    word = ["pano", "best", "has"]  # -->yes
+    word = ["yoda", "best", "has"]  # -->yes
     for i in range(len(word)):
         if len(word[i]) > i:
             value += word[i][i]

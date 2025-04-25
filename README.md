@@ -63,10 +63,10 @@ The program is interactive, operating as a command-line menu-driven application.
    pip install -r requirements.txt
 ---
 ## How to Run
-1. **Execute the dictionary file** 
+1. **Execute the main file** 
     Execute the main script:
     ```bash
-    python dictionary.py
+    python main.py
 
 The program will then display an interactive menu providing options to perform the available tasks.
 ---
@@ -90,10 +90,10 @@ Note: Type STOP at any prompt to exit the current functionality.
 ---
 ## Testing
 The project includes integration with pytest for unit testing. To run the test suite:
-Navigate to the tests folder an run the test_dictionary file
+Navigate to the tests folder an run the test_main file
     ```bash
     cd tests
-    python test_dictionary.py
+    python test_main.py
 
 ### Example Tests Include:
 1. **Adding and searching for fruits in the dictionary.**  
