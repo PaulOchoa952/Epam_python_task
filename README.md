@@ -52,3 +52,51 @@ The program is interactive, operating as a command-line menu-driven application.
    Clone this repository to your local machine:
    ```bash
    git clone <repository_url>
+2. **Navigate to the Project directory**  
+   Navigate:
+   ```bash
+   cd Epam_Python_task
+3. **Install dependencies.Create and activate a virtual enviroment**
+   ```bash
+   python -m venv env
+   source env/bin/activate
+   pip install -r requirements.txt
+---
+## How to Run
+
+Execute the main script:
+    ```bash
+    python dictionary.py
+
+The program will then display an interactive menu providing options to perform the available tasks.
+---
+
+## Usage
+
+### Menu Options
+
+1. **Add a new Fruit**  
+Allows the user to add a fruit with a name and description to the dictionary.
+2. **Search for a Fruit**  
+Search for a fruit by name and display its description.
+3. **Add an Item to the Shopping List**  
+Add items to your shopping list and calculate the total cost including tax.
+4. **Get the nth letter Word**  
+Solve the kata problem of concatenating the nth letter from each word in a list.
+5. **Exit**  
+Exit the program.
+
+Note: Type STOP at any prompt to exit the current functionality.
+---
+## Testing
+The project includes integration with pytest for unit testing. To run the test suite:
+Navigate to the tests folder an run the test_dictionary file
+    ```bash
+    cd tests
+    python test_dictionary.py
+
+### Example Tests Include:
+1. **Adding and searching for fruits in the dictionary.**  
+2. **Calculating total costs with and without ignoring items not in the cost dictionary.** 
+3. **Assembling the word from an array of words.** 
+
