@@ -1,6 +1,8 @@
 import unittest
 from io import StringIO
 import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from array_task import get_the_word
 
 class TestGetTheWord(unittest.TestCase):

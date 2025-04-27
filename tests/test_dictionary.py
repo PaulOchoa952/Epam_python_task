@@ -1,6 +1,9 @@
 import unittest
+import os
 from io import StringIO
 import sys
+# Add the parent directory to the module search path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from dictionary_task import Dictionary
 
 

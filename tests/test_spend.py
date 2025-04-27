@@ -1,6 +1,8 @@
 import unittest
+import os
 from io import StringIO
 import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from spend_task import newItem, get_Total, items_bought
 
 
