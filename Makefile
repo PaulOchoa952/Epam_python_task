@@ -43,12 +43,7 @@ clean:
 # Run the dictionary example with add options
 dict:
 	@echo "Running the dictionary example..."
-	$(PYTHON) -c "from dictionary_task import Dictionary; d = Dictionary(); d.newEntry('apple', 'A red fruit'); d.look('apple')"
-
-# Run the dictionary example with lookup options
-lookup:
-	@echo "Running the dictionary example with a lookup..."
-	$(PYTHON) -c "from dictionary_task import Dictionary; d = Dictionary(); d.look('apple')"
+	$(PYTHON) -c "from dictionary_task import Dictionary; d = Dictionary(); d.run()
 
 # Run the spending/tax calculation example
 spend:
