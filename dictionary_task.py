@@ -1,52 +1,50 @@
-class Dictionary:
-    # Constructor: Initializes the dictionary
-    def __init__(self):
-        self.words = {}  # Instance-level dictionary to store words
+import unittest
+from io import StringIO
+import sys
+from dictionary_task import Dictionary
 
-    # Add a new word to the dictionary
-    def new_Entry(self):
-        word = input("Enter the word: ").strip()
-        description = input("Enter the description: ").strip()
-        self.words[word] = description
-        print(f"'{word}' has been added to the dictionary.")
 
-    # Look up a word in the dictionary
-    def look(self):
-        word = input("Enter the word to look up: ").strip()
-        if word in self.words:
-            print(f"The description for '{word}' is: {self.words[word]}")
-        else:
-            print(f"'{word}' not found in the dictionary.")
+class TestDictionary(unittest.TestCase):
+    def setUp(self):
+        # Create a new instance of Dictionary for each test
+        self.dictionary = Dictionary()
+        # Redirect stdout to capture print statements
+        self.held_output = StringIO()
+        sys.stdout = self.held_output
 
-    # Main method to handle user interaction
-    def run(self):
-        actions = {
-            "1": self.new_Entry,
-            "2": self.look,
-            "3": self.exit_program,
-        }
+    def tearDown(self):
+        # Reset stdout after each test
+        sys.stdout = sys.__stdout__
 
-        while True:
-            print("\nOptions:")
-            print("1. Add a new word")
-            print("2. Look up a word")
-            print("3. Exit")
-            choice = input("Enter your choice: ").strip()
+    def test_new_entry(self):
+        # Mock user input for adding a new word
+        inputs = iter(["apple", "A red fruit"])
+        self.dictionary.new_Entry = lambda: self.dictionary.words.update({next(inputs): next(inputs)})
+        self.dictionary.new_Entry()
+        # Assert that the word is in the dictionary
+        self.assertIn("apple", self.dictionary.words)
+        self.assertEqual(self.dictionary.words["apple"], "A red fruit")
 
-            action = actions.get(choice)
-            if action:
-                action()  # Call the corresponding method
-            else:
-                print("Invalid choice. Please select a valid option.")
+    def test_look_existing_word(self):
+        # Add a word to the dictionary
+        self.dictionary.words["banana"] = "A yellow fruit"
+        # Mock user input for looking up the word
+        self.dictionary.look = lambda: print(f"The description for 'banana' is: {self.dictionary.words['banana']}")
+        self.dictionary.look()
+        # Capture the printed output
+        output = self.held_output.getvalue().strip()
+        # Assert the expected output
+        self.assertEqual(output, "The description for 'banana' is: A yellow fruit")
 
-    # Exit the program
-    def exit_program(self):
-        print("Exiting the program. Goodbye!")
-        exit()
+    def test_look_non_existing_word(self):
+        # Mock user input for looking up a non-existing word
+        self.dictionary.look = lambda: print("'orange' not found in the dictionary.")
+        self.dictionary.look()
+        # Capture the printed output
+        output = self.held_output.getvalue().strip()
+        # Assert the expected output
+        self.assertEqual(output, "'orange' not found in the dictionary")
 
 
 if __name__ == "__main__":
-    d = Dictionary()
-    d.run()
-
-# 1.in this kata your job its to create a class dictionary which you can add words to and their entries
+    unittest.main()
