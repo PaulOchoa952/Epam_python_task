@@ -27,7 +27,7 @@ def get_Total(tax):
 # add the items to the purcharse_array
 def add_item():
     while True:
-        print("\n Add the items to the array(type STOP to finish)")
+        print("\n Add the items to the array(type STOP to finish) \n")
         item_bougth = input("Enter the item: ").strip()
         if item_bougth.lower() == "stop":
             print("\n")

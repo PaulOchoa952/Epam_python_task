@@ -20,14 +20,14 @@ class TestDictionary(unittest.TestCase):
         sys.stdout = sys.__stdout__
 
     def test_new_entry(self):
-        self.dictionary.newEntry("apple", "A red fruit")
+        self.dictionary.new_Entry("apple", "A red fruit")
         # Assert that the word is in the dictionary
         self.assertIn("apple", self.dictionary.words)
         self.assertEqual(self.dictionary.words["apple"], "A red fruit")
 
     def test_look_existing_word(self):
         # Add a word and look it up
-        self.dictionary.newEntry("banana", "A yellow fruit")
+        self.dictionary.new_Entry("banana", "A yellow fruit")
         self.dictionary.look("banana")
         # Capture the printed output
         output = self.held_output.getvalue().strip()
