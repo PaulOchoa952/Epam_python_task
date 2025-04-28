@@ -62,62 +62,78 @@ The program is interactive, operating as a command-line menu-driven application.
    source env/bin/activate
    pip install -r requirements.txt
 ---
-## How to Run
-1. **Execute the main file** 
-    Execute the main script:
+ ## How to Run
+
+ Each task is implemented in its own file. You can run them individually as follows:
+
+ 1. **Run the Dictionary Task**  
+    Add and search for words in the dictionary:
     ```bash
-    python main.py
+    python dictionary_task.py
+    ```
 
-The program will then display an interactive menu providing options to perform the available tasks.
----
+ 2. **Run the Spending/Tax Calculation Task**  
+    Add items to a shopping list and calculate the total cost:
+    ```bash
+    python spend_task.py
+    ```
 
-## Usage
+ 3. **Run the nth Letter Word Assembly Task**  
+    Solve the kata problem of concatenating the nth letter from each word in a list:
+    ```bash
+    python array_task.py
+    ```
 
-### Menu Options(Choose an option)
+ ---
 
-1. **Add a new Fruit**  
-Allows the user to add a fruit with a name and description to the dictionary.
-2. **Search for a Fruit**  
-Search for a fruit by name and display its description.
-3. **Add an Item to the Shopping List**  
-Add items to your shopping list and calculate the total cost including tax.
-4. **Get the nth letter Word**  
-Solve the kata problem of concatenating the nth letter from each word in a list.
-5. **Exit**  
-Exit the program.
+ ## Usage
 
-Note: Type STOP at any prompt to exit the current functionality.
----
-## Testing
-The project includes integration with pytest for unit testing. To run the test suite:
-Navigate to the tests folder an run the test_main file
+  Dictionary Task
+ - Add a word with a name and description to the dictionary.
+ - Search for a word by name and display its description.
+
+  Spending/Tax Calculation Task
+ - Add items to your shopping list.
+ - Calculate the total cost of the items, including a user-specified tax.
+
+  nth Letter Word Assembly Task
+ - Concatenate the nth letter from each word in a list, where `n` is the position of the word in the list.
+
+ ---
+
+ ## Testing
+
+ The project includes integration with `pytest` for unit testing. To run the test suite:
+
+ 1. Navigate to the `tests` folder:
     ```bash
     cd tests
-    python test_main.py
+    ```
 
-### Example Tests Include:
-1. **Adding and searching for fruits in the dictionary.**  
-2. **Calculating total costs with and without ignoring items not in the cost dictionary.** 
-3. **Assembling the word from an array of words.** 
+ 2. Run the tests:
+    ```bash
+    python -m unittest discover
+    ```
 
-# Python Project with Makefile
+  Example Tests Include:
+ 1. **Adding and searching for words in the dictionary.**  
+ 2. **Calculating total costs with and without ignoring items not in the cost dictionary.**  
+ 3. **Assembling the word from an array of words.**
 
-This project includes a `Makefile` to simplify common tasks such as installing dependencies, running tests, linting, and executing specific examples.
+ ---
 
-## Available Makefile Commands
+ ## Makefile Commands
 
-Below is a list of available commands in the `Makefile`:
+ This project includes a `Makefile` to simplify common tasks such as installing dependencies, running tests, linting, and executing specific examples.
 
-### General Commands
-- **`make help`**: Display the list of available commands.
-- **`make install`**: Install all required dependencies from `requirements.txt`.
-- **`make lint`**: Run Ruff for code linting.
-- **`make test`**: Run Pytest for unit tests.
-- **`make clean`**: Clean up Python cache and temporary files.
+  General Commands
+ - **`make help`**: Display the list of available commands.
+ - **`make install`**: Install all required dependencies from `requirements.txt`.
+ - **`make lint`**: Run Ruff for code linting.
+ - **`make test`**: Run Pytest for unit tests.
+ - **`make clean`**: Clean up Python cache and temporary files.
 
-### Example-Specific Commands
-- **`make menu`**: Run the menu example, which allows you to interact with all the options (add words, look up words, calculate spending, etc.).
-- **`make dict`**: Run the dictionary example to add words and their descriptions.
-- **`make lookup`**: Run the dictionary example to look up words and their descriptions.
-- **`make spend`**: Run the spending/tax calculation example.
-- **`make array`**: Run the nth letter concatenation array example.
+  Example-Specific Commands
+ - **`make dict`**: Run the dictionary task to add words and their descriptions.
+ - **`make spend`**: Run the spending/tax calculation task.
+ - **`make array`**: Run the nth letter concatenation task.
