@@ -139,5 +139,18 @@
  ```
 
  ---
-
+owatchlist/
+├── app/
+│   ├── __init__.py
+│   ├── main.py          # Entry point for the FastAPI app
+│   ├── models.py        # SQLAlchemy models for the database
+│   ├── schemas.py       # Pydantic schemas for request/response validation
+│   ├── crud.py          # CRUD operations for the database
+│   ├── database.py      # Database connection setup
+│   └── logger.py        # Logging middleware
+├── Dockerfile           # Dockerfile to containerize the app
+├── requirements.txt     # Dependencies for the project
+├── movies.db            # SQLite database file
+└── README.md            # Documentation for the task
+---
  Let me know if you need further assistance!
