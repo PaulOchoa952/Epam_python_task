@@ -1,12 +1,15 @@
 from pydantic import BaseModel
 from typing import Optional
 
+
 class MovieBase(BaseModel):
     name: str
     release_date: str
 
+
 class MovieCreate(MovieBase):
     pass
+
 
 class Movie(BaseModel):
     id: int
